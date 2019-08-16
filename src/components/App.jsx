@@ -1,12 +1,13 @@
 import React from "react";
 import Search from "./Search";
+import Recipes from "./Recipes";
 import { Layout, Icon } from "antd";
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
-function App() {
+const App = () => {
   return (
-    <Layout className="layout" style={{ height: "100vh" }}>
+    <Layout className="layout">
       <Header>
         <h2 style={{ color: "#fff" }}>
           <Icon type="search" /> Recipe Finder
@@ -20,15 +21,20 @@ function App() {
             web for recipes!
           </p>
         </div>
-        <div style={{ background: "#fff", padding: 25 }}>
+        <div
+          style={{
+            background: "#fff",
+            padding: 25,
+            maxWidth: 800,
+            margin: "auto"
+          }}
+        >
           <Search />
+          <Recipes />
         </div>
       </Content>
-      <Footer style={{ textAlign: "center" }}>
-        Stephen Lerminiaux ©2019 using Ant Design
-      </Footer>
     </Layout>
   );
-}
+};
 
 export default App;
