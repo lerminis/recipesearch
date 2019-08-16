@@ -1,3 +1,7 @@
+# RecipeSearch
+
+> React app to search the web for recipes. Uses Redux for state management, Ant Design, and the Recipe Puppy API.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

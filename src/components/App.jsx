@@ -1,39 +1,50 @@
 import React from "react";
-import Search from "./Search";
-import Recipes from "./Recipes";
-import { Layout, Icon } from "antd";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
+import { Layout, Button, Icon } from "antd";
 
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 const App = () => {
   return (
-    <Layout className="layout">
-      <Header>
-        <h2 style={{ color: "#fff" }}>
-          <Icon type="search" /> Recipe Finder
-        </h2>
-      </Header>
-      <Content style={{ padding: 50, textAlign: "center" }}>
-        <div style={{ paddingBottom: 25 }}>
-          <h3>Search for recipes below!</h3>
-          <p>
-            Enter a comma-separated list of ingredients and a Dish to Search the
-            web for recipes!
-          </p>
-        </div>
-        <div
+    <Router>
+      <Layout>
+        <Header
           style={{
-            background: "#fff",
-            padding: 25,
-            maxWidth: 800,
-            margin: "auto"
+            position: "fixed",
+            zIndex: 1,
+            width: "100%"
           }}
         >
-          <Search />
-          <Recipes />
-        </div>
-      </Content>
-    </Layout>
+          <Link to="/">
+            <h2 style={{ color: "#fff", float: "left" }}>
+              <Icon type="search" /> RecipeSearch
+            </h2>
+          </Link>
+          <Link to="/about">
+            <Button
+              style={{ float: "right", marginTop: "16px" }}
+              type="link"
+              ghost
+            >
+              About
+            </Button>
+          </Link>
+        </Header>
+        <Content style={{ padding: 50, textAlign: "center", marginTop: 64 }}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route component={NotFound} />
+          </Switch>
+        </Content>
+        <Footer style={{ textAlign: "center", opacity: 0.5 }}>
+          Stephen Lerminiaux ©2019 using Ant Design
+        </Footer>
+      </Layout>
+    </Router>
   );
 };
 

@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { RECEIVE_RECIPES, REQUEST_RECIPES } from "../actions";
+import { RECEIVE_RECIPES, REQUEST_RECIPES, CLEAR_RECIPES } from "../actions";
 
 const initialState = {
   recipes: [],
@@ -18,6 +18,12 @@ const recipeReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true
+      };
+    case CLEAR_RECIPES:
+      return {
+        ...state,
+        recipes: [],
+        isFetching: false
       };
     default:
       return state;
