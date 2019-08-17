@@ -20,7 +20,7 @@ const App = () => {
         >
           <Link to="/">
             <h2 style={{ color: "#fff", float: "left" }}>
-              <Icon type="search" /> RecipeSearch
+              <Icon type="fire" theme="twoTone" /> RecipeSearch
             </h2>
           </Link>
           <Link to="/about">
