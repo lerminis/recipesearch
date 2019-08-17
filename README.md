@@ -1,8 +1,8 @@
 # RecipeSearch
 
-> React app to search the web for recipes. Uses Redux for state management, Ant Design, and the Recipe Puppy API.
+> React app to search the web for recipes. Uses Redux for state management, Ant Design, and the Edamam Recipe Search API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+See it [here](https://recipesearch-react-antd.netlify.com/).
 
 ## Available Scripts
 
